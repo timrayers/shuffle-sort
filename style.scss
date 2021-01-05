@@ -1,0 +1,166 @@
+$colour__tile_001: rgb(119,151,166);
+$colour__tile_002: rgb(72,141,170);
+$colour__tile_003: rgb(51,69,77);
+$colour__tile_004: rgb(191,191,191);
+$colour_004: #6F98A8;
+$colour_006: #BFBFBF;
+$colour_008: #2F454E;
+$colour__btn: #72C3DC;
+$colour__btn-shadow: $colour__tile_002;
+$colour__background-body-sm: #FFFFFF;
+$colour__background-body: #EFEFEF;
+$colour__background-tile-sm: #EFEFEF;
+$colour__background-header-sm: #333333;
+$colour__background-header: #FFFFFF;
+$colour__text-primary: #000000;
+$colour__text-primary__inverse: #FFFFFF;
+
+body {
+    background: $colour__background-body-sm;
+    color: $colour__text-primary;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: $colour__background-header-sm;
+    color: $colour__text-primary__inverse;
+    padding: 8px 0;
+    text-align: center;
+    width: 100%;
+    h1 {
+        font-size: 1.3rem;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+#shuffle-sort-btns {
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+
+    .shuffle-sort-btns__btn {
+        color: $colour__text-primary__inverse;
+        cursor: pointer;
+        background-color: $colour__btn;
+        border-bottom: 4px solid $colour__btn-shadow;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        margin: 4px 2px;
+        min-width: 80px;
+        padding: 16px 8px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+#shuffle-sort-tiles {
+    display: flex;
+    max-width: 1000px;
+    justify-content: center;
+    flex-wrap: wrap;
+    .shuffle-sort-tiles__tile {
+        background: $colour__background-tile-sm;
+        font-size: 1.1rem;
+        margin: 2px 0;
+        padding: 10px 0;
+        text-align: center;
+        min-width: 90%;
+        box-sizing: border-box;
+        &#tile__1,
+        &#tile__8 {
+            border-left: 6px solid $colour__tile_001;
+        }
+        &#tile__2,
+        &#tile__4 {
+            border-left: 6px solid $colour__tile_002;
+        }
+        &#tile__3,
+        &#tile__5,
+        &#tile__9 {
+            border-left: 6px solid $colour__tile_003;
+        }
+        &#tile__6,
+        &#tile__7 {
+            border-left: 6px solid $colour__tile_004;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    font-style: italic;
+    padding: 20px 0;
+}
+
+
+@media screen and (min-width: 960px) {
+    body {
+        background: $colour__background-body;
+    }
+
+    header {
+        background-color: $colour__background-header;
+        border-bottom: 3px solid $colour__tile_004;
+        color: $colour__text-primary;
+        h1 {
+            font-size: 1rem;
+        }
+    }
+
+    main {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+    #shuffle-sort-btns {
+        flex-grow: 1;
+        flex-wrap: wrap;
+        max-height: 120px;
+        padding: 2em;
+        max-width: 220px;
+        .shuffle-sort-btns__btn {
+            margin: 10px 0;
+            min-width: 180px;
+        }
+    }
+    #shuffle-sort-tiles {
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+        .shuffle-sort-tiles__tile {
+            color: #FFF;
+            height: 180px;
+            font-size: 5em;
+            line-height: 140px;
+            margin: 0;
+            min-width: 180px;
+            width: 33%;
+            &#tile__1,
+            &#tile__8 {
+                background-color: $colour__tile_001;
+                border-left: none;
+            }
+            &#tile__2,
+            &#tile__4 {
+                background-color: $colour__tile_002;
+                border-left: none;
+            }
+            &#tile__3,
+            &#tile__5,
+            &#tile__9 {
+                background-color: $colour__tile_003;
+                border-left: none;
+            }
+            &#tile__6,
+            &#tile__7 {
+                background-color: $colour__tile_004;
+                border-left: none;
+            }
+        }
+    }
+}
